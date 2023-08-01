@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Delete
+{% endblock %}
+
+{% block main %}
+    <form action="/delete" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="ban" name="ban" placeholder="Symbol" type="text">
+        </div>
+        <button class="btn btn-primary" type="submit">Delete</button>
+    </form>
+{% endblock %}
