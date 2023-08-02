@@ -48,6 +48,7 @@ def login():
         user_name = request.form.get("username")
         password = request.form.get("password")
         cl.login(user_name,password)
+        cl.totp_disable()
         user_id = cl.user_id_from_username(user_name)
         session["user_id"] = user_id
         session["username"] = request.form.get("username")
