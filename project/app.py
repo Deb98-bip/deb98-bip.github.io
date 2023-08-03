@@ -13,6 +13,7 @@ app = Flask(__name__)
 
 cl = Client()
 
+
 # Configure session to use filesystem (instead of signed cookies)
 app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
@@ -47,7 +48,6 @@ def login():
         #retrive user account
         user_name = request.form.get("username")
         password = request.form.get("password")
-        cl.totp_disable()
         cl.login(user_name,password)
         user_id = cl.user_id_from_username(user_name)
         session["user_id"] = user_id
